@@ -1,0 +1,36 @@
+What are the inode values of file1.txt and file2.txt?
+
+They are the same.
+
+1852343 -rw-r--r-- 3 kali kali 24 Dec  3 10:34 file2.txt
+1852343 -rw-r--r-- 3 kali kali 24 Dec  3 10:34 file1.txt
+
+They have the same exact content.
+
+Next, edit file2.txt and change its contents.
+
+They are the same.
+
+enter the following command which removes file1.txt:
+
+file2.txt still exists.
+
+What system call is used for removing file2.txt
+
+unlinkat(AT_FDCWD, "file2.txt", 0)      = 0
+
+Are the inodes the same, or is each unique?
+
+1852735 -rw-r--r-- 1 kali kali 0 Dec  3 12:04 file3.txt
+1855159 lrwxrwxrwx 1 kali kali 9 Dec  3 12:04 file4.txt -> file3.txt
+
+Next, edit the contents of file4.txt.
+
+Yes both have the same.
+
+explain what happens when you attempt to edit
+
+After deleting file3.txt and editing file4.txt file3.txt gets created again with the same content as file4.txt
+
+
+
